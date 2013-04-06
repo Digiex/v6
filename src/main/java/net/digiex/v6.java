@@ -30,9 +30,11 @@ public class v6 extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        if (getVault() == null) {
+                getServer().getPluginManager().disablePlugin(this);
+            }
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(v6listener, this);
-        getVault();
         PluginDescriptionFile pdfFile = this.getDescription();
         getLogger().info( pdfFile.getName() + " version " + pdfFile.getVersion() + " is enabled!" );
     }
