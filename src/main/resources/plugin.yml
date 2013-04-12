@@ -1,5 +1,4 @@
 name: V6
 main: net.digiex.v6.V6
 version: 1.0
-depend: [Vault]
 author: xzKinGzxBuRnzx
