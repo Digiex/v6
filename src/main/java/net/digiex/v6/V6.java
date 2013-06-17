@@ -42,12 +42,10 @@ public class V6 extends JavaPlugin {
 		@EventHandler
 		public void onPlayerJoin(PlayerJoinEvent event) {
 			Player player = event.getPlayer();
-			if (!player.hasPermission(permission)
-					&& player.getAddress().getAddress().getHostAddress()
+			if (player.getAddress().getAddress().getHostAddress()
 							.contains(":")) {
 				addPermission(player);
-			} else if (player.hasPermission(permission)
-					&& !player.getAddress().getAddress().getHostAddress()
+			} else if (!player.getAddress().getAddress().getHostAddress()
 							.contains(":")) {
 				removePermission(player);
 			}
